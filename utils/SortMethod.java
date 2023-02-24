@@ -4,7 +4,7 @@ public class SortMethod{
     private int[] data;
 
     public SortMethod(){
-        this.data = new int[]{5, 3, 1, 2, 8, 4, 10, 7};
+        this.data = new int[]{5, 3, 1, 2, 8, 4, 10, 7, 6};
     }
 
     public int[] copyInt(int[] data){
