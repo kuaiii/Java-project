@@ -69,10 +69,10 @@ public class SortMethod{
         SortMethod x = new SortMethod();
         
         // 调用bubble方法
-        int[] newdata = x.copyInt(x.data);
-        x.bubble(newdata);
-        newdata = x.copyInt(x.data);
-        x.printInt(newdata);
-        x.quick(newdata);
+        //int[] newdata = x.copyInt(x.data);
+        // x.bubble(newdata);
+        // newdata = x.copyInt(x.data);
+        // x.printInt(newdata);
+        // x.quick(newdata);
     }
 }
