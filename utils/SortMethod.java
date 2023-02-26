@@ -18,12 +18,11 @@ public class SortMethod{
 
     public void printInt(int[] data){
         for(int i=0; i<data.length; i++){
-            System.out.println(data[i]);
+            System.out.print(data[i] + " ");
         }
     }
 
     public void bubble(int[] data){
-        System.out.println("bubble:");
         for(int i=0; i<data.length-1; i++){
             int temp;
             for(int j=0; j<data.length-i-1; j++){
@@ -34,9 +33,8 @@ public class SortMethod{
                 }
             }
         }
-        for(int i=0; i<data.length; i++){
-            System.out.println(data[i]);
-        }
+        System.out.println("\nbubble排序之后的数组排序:");
+        printInt(data);
     }
     public void quick(int[] data){
         partition(data, 0, data.length-1);
@@ -67,10 +65,14 @@ public class SortMethod{
     }
     public static void main(String[] args){
         SortMethod x = new SortMethod();
-        
+        int[] data = new int[]{5, 3, 1, 2, 8, 4, 10, 7, 6};
+        System.out.println("数组在修改之前的值: ");;
         // 调用bubble方法
-        int[] newdata = x.copyInt(x.data);
-        x.bubble(newdata);
+        x.printInt(data);
+        //int[] newdata = x.copyInt(x.data);
+        x.bubble(data);
+        System.out.println("\n数组在修改之后的值：");
+        x.printInt(data);
         // newdata = x.copyInt(x.data);
         // x.printInt(newdata);
         // x.quick(newdata);
