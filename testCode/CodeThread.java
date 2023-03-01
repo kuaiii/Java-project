@@ -13,16 +13,18 @@ public class CodeThread extends Thread{
     }
 
     public void run(){
-        char[] guessword = new char[passwords.size()];
-        generated(guessword, 0, passwords);
+        char[] guessword = new char[password.length()];
+        generated(guessword, password);
     }
-
-    public void generated(char[] guessword, int index, List<String> passwords){
+    public void generated(char[] guessword, String password){
+        generated(guessword, 0, password);
+    }
+    public void generated(char[] guessword, int index, String password){
         if(flag){
             return;
         } else{
-            for(short i='0'; i<'Z'; i++){
-                c = (char)i;
+            for(short i='0'; i<'z'; i++){
+                char c = (char)i;
                 if(!Character.isLetterOrDigit(c)){
                     continue;
                 } else{
@@ -32,10 +34,12 @@ public class CodeThread extends Thread{
                         passwords.add(guess);
                         if(guess.equals(password)){
                             flag = true;
-                            break;
+                            System.out.println("密码破译成功为: " + guess);
+                            System.out.println("密码为：" + password);
+                            return;
                         }
                     }  else{
-                        generated(guessword, index+1, passwords);
+                        generated(guessword, index+1, password);
                     }
                 }
             }

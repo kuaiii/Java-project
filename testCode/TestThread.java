@@ -1,6 +1,10 @@
 package testCode;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
+import testCode.CodeThread;
+import testCode.LogThread;
 
 public class TestThread {
     public static boolean flag = false;
@@ -26,6 +30,10 @@ public class TestThread {
     }
 
     public static void main(String[] args){
-        
+        String password = TestThread.randomString(3);
+        List<String> passwords = new ArrayList<>();
+
+        new CodeThread(password, passwords).start();
+        new LogThread(passwords).start();
     }
 }
